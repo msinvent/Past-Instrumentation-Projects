@@ -1,0 +1,57 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+!_TAG_REVISION_NAME	MCHPTags	//
+!_TAG_REVISION_VERSION	6.0.1	//
+BAUDRATE::38400	D:\Manish Sharma\projects\rig\microdaq programmes\4th\UART.c	5;"	d	line:5	file:
+BRGVAL::((FCY/BAUDRATE)/16)-1	D:\Manish Sharma\projects\rig\microdaq programmes\4th\UART.c	6;"	d	line:6	file:
+CONST_1::0.005493	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	5;"	d	line:5	file:
+DATA_SIZE::23	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	4;"	d	line:4	file:
+FCY::40000000	D:\Manish Sharma\projects\rig\microdaq programmes\4th\UART.c	3;"	d	line:3	file:
+FNOSC_FRC	D:\Manish Sharma\projects\rig\microdaq programmes\4th\CLOCK.c	4;"	v	line:4
+OSCIOFNC_OFF	D:\Manish Sharma\projects\rig\microdaq programmes\4th\CLOCK.c	6;"	v	line:6
+ReceivedChar	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	15;"	v	line:15
+_T1Interrupt	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	50;"	f	line:50	signature:(void)
+_U1RXInterrupt	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	93;"	f	line:93	signature:(void)
+_U2RXInterrupt	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	112;"	f	line:112	signature:(void)
+a	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	193;"	l	line:193
+adc_sample	D:\Manish Sharma\projects\rig\microdaq programmes\4th\ADC.c	43;"	f	line:43	signature:(unsigned char channel)
+adc_sample	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	11;"	p	line:11	file:	signature:(unsigned char channel)
+adc_values	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	19;"	v	line:19
+configure_ADC	D:\Manish Sharma\projects\rig\microdaq programmes\4th\ADC.c	4;"	f	line:4	signature:(void)
+configure_ADC	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	10;"	p	line:10	file:	signature:(void)
+configure_PPS	D:\Manish Sharma\projects\rig\microdaq programmes\4th\UART.c	47;"	f	line:47	signature:(void)
+configure_PPS	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	9;"	p	line:9	file:	signature:(void)
+configure_TIMER_T1	D:\Manish Sharma\projects\rig\microdaq programmes\4th\TIMER.c	3;"	f	line:3	signature:(void)
+configure_TIMER_T1	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	12;"	p	line:12	file:	signature:(void)
+counter	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	16;"	v	line:16
+data	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	115;"	l	line:115
+delay_ms	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	168;"	f	line:168	signature:(int time)
+disableInterrupts	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	41;"	f	line:41	signature:(void)
+enableInterrupts	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	30;"	f	line:30	signature:(void)
+error	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	25;"	v	line:25
+flag_0	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	17;"	v	line:17
+flag_3	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	18;"	v	line:18
+i	D:\Manish Sharma\projects\rig\microdaq programmes\4th\UART.c	7;"	v	line:7
+i	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	116;"	l	line:116
+i	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	170;"	l	line:170
+j	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	116;"	l	line:116
+j	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	170;"	l	line:170
+k	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	170;"	l	line:170
+main	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	181;"	f	line:181
+pitch	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	21;"	v	line:21
+pitch_2	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	23;"	v	line:23
+roll	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	21;"	v	line:21
+roll_2	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	22;"	v	line:22
+set_clock_settings	D:\Manish Sharma\projects\rig\microdaq programmes\4th\CLOCK.c	9;"	f	line:9	signature:(void)
+set_clock_settings	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	7;"	p	line:7	file:	signature:(void)
+uart_settings	D:\Manish Sharma\projects\rig\microdaq programmes\4th\UART.c	9;"	f	line:9	signature:(void)
+uart_settings	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	8;"	p	line:8	file:	signature:(void)
+var1	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	20;"	v	line:20
+var2	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	20;"	v	line:20
+var3	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	20;"	v	line:20
+yaw	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	21;"	v	line:21
+yaw_2	D:\Manish Sharma\projects\rig\microdaq programmes\4th\main.c	24;"	v	line:24

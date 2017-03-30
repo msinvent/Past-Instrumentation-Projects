@@ -1,0 +1,67 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+!_TAG_REVISION_NAME	MCHPTags	//
+!_TAG_REVISION_VERSION	6.0.1	//
+BAUDRATE::9600	D:\Manish Sharma\projects\PID\backup\pid.3\PID\UART.c	5;"	d	line:5	file:
+BRGVAL::((FCY/BAUDRATE)/16)-1	D:\Manish Sharma\projects\PID\backup\pid.3\PID\UART.c	7;"	d	line:7	file:
+CONTROL_1	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	94;"	f	line:94	signature:(unsigned int set_point,unsigned int present_value)
+CONTROL_2	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	110;"	f	line:110	signature:(unsigned int set_point,unsigned int present_value)
+CONTROL_3	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	141;"	f	line:141	signature:(unsigned int set_point,unsigned int present_value)
+CONTROL_4	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	186;"	f	line:186	signature:(unsigned int set_point,unsigned int present_value)
+FCY::40000000	D:\Manish Sharma\projects\PID\backup\pid.3\PID\UART.c	3;"	d	line:3	file:
+FNOSC_FRC	D:\Manish Sharma\projects\PID\backup\pid.3\PID\clock.c	4;"	v	line:4
+Kd::0	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	13;"	d	line:13	file:
+Ki::0	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	14;"	d	line:14	file:
+Kp::2	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	12;"	d	line:12	file:
+LED_1::LATAbits.LATA2	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	6;"	d	line:6	file:
+LED_2::LATAbits.LATA4	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	7;"	d	line:7	file:
+OSCIOFNC_OFF	D:\Manish Sharma\projects\PID\backup\pid.3\PID\clock.c	6;"	v	line:6
+PID	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	45;"	p	line:45	file:	signature:(unsigned int,unsigned int)
+PID	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	71;"	f	line:71	signature:(unsigned int set_point,unsigned int present_value)
+PWM	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	250;"	l	line:250
+Pr_error	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	18;"	v	line:18
+_T1Interrupt	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	242;"	f	line:242	signature:(void)
+adc_sample	D:\Manish Sharma\projects\PID\backup\pid.3\PID\ADC.c	44;"	f	line:44	signature:(unsigned char channel)
+adc_sample	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	44;"	p	line:44	file:	signature:(unsigned char)
+adc_value_present	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	17;"	v	line:17
+adc_value_setpoint	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	16;"	v	line:16
+configure_ADC	D:\Manish Sharma\projects\PID\backup\pid.3\PID\ADC.c	4;"	f	line:4	signature:(void)
+configure_ADC	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	36;"	p	line:36	file:	signature:(void)
+configure_BOARD	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	280;"	f	line:280
+configure_PPS	D:\Manish Sharma\projects\PID\backup\pid.3\PID\UART.c	49;"	f	line:49	signature:(void)
+configure_PPS	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	39;"	p	line:39	file:	signature:(void)
+configure_TIMER_T1	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	40;"	p	line:40	file:	signature:(void)
+configure_TIMER_T1	D:\Manish Sharma\projects\PID\backup\pid.3\PID\timer.c	3;"	f	line:3	signature:(void)
+configure_clock	D:\Manish Sharma\projects\PID\backup\pid.3\PID\clock.c	9;"	f	line:9	signature:(void)
+configure_clock	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	37;"	p	line:37	file:	signature:(void)
+configure_uart	D:\Manish Sharma\projects\PID\backup\pid.3\PID\UART.c	10;"	f	line:10	signature:(void)
+configure_uart	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	38;"	p	line:38	file:	signature:(void)
+correction_factor	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	118;"	l	line:118
+correction_factor	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	150;"	l	line:150
+correction_factor	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	194;"	l	line:194
+delay_ms	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	266;"	f	line:266	signature:(int time)
+delay_ms	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	46;"	p	line:46	file:	signature:(int)
+disableInterrupts	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	62;"	f	line:62	signature:(void)
+duty_cycle	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	27;"	v	line:27
+enableInterrupts	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	51;"	f	line:51	signature:(void)
+error	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	115;"	l	line:115
+error	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	145;"	l	line:145
+error	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	190;"	l	line:190
+error	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	99;"	l	line:99
+flag	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	20;"	v	line:20
+i	D:\Manish Sharma\projects\PID\backup\pid.3\PID\UART.c	8;"	v	line:8
+i	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	268;"	l	line:268
+i_term	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	19;"	v	line:19
+j	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	268;"	l	line:268
+k	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	268;"	l	line:268
+ki_const	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	31;"	v	line:31
+kp_const	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	30;"	v	line:30
+main	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	311;"	f	line:311
+motor_control	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	218;"	f	line:218	signature:(int a )
+p_term	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	116;"	l	line:116
+p_term	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	146;"	l	line:146
+p_term	D:\Manish Sharma\projects\PID\backup\pid.3\PID\main.c	191;"	l	line:191

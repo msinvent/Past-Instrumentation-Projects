@@ -1,0 +1,56 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+!_TAG_REVISION_NAME	MCHPTags	//
+!_TAG_REVISION_VERSION	6.0.1	//
+BAUDRATE::9600	D:\Manish Sharma\projects\PID\UART.c	5;"	d	line:5	file:
+BRGVAL::((FCY/BAUDRATE)/16)-1	D:\Manish Sharma\projects\PID\UART.c	7;"	d	line:7	file:
+D_term	D:\Manish Sharma\projects\PID\main.c	63;"	l	line:63
+FCY::40000000	D:\Manish Sharma\projects\PID\UART.c	3;"	d	line:3	file:
+FNOSC_FRC	D:\Manish Sharma\projects\PID\clock.c	4;"	v	line:4
+I_term	D:\Manish Sharma\projects\PID\main.c	18;"	v	line:18
+Kd::0	D:\Manish Sharma\projects\PID\main.c	12;"	d	line:12	file:
+Ki::0	D:\Manish Sharma\projects\PID\main.c	13;"	d	line:13	file:
+Kp::2	D:\Manish Sharma\projects\PID\main.c	11;"	d	line:11	file:
+LED_1::LATAbits.LATA2	D:\Manish Sharma\projects\PID\main.c	5;"	d	line:5	file:
+LED_2::LATAbits.LATA4	D:\Manish Sharma\projects\PID\main.c	6;"	d	line:6	file:
+OSCIOFNC_OFF	D:\Manish Sharma\projects\PID\clock.c	6;"	v	line:6
+PID	D:\Manish Sharma\projects\PID\main.c	32;"	p	line:32	file:	signature:(unsigned int,unsigned int)
+PID	D:\Manish Sharma\projects\PID\main.c	58;"	f	line:58	signature:(unsigned int set_point,unsigned int present_value)
+PID_out	D:\Manish Sharma\projects\PID\main.c	66;"	l	line:66
+PWM	D:\Manish Sharma\projects\PID\main.c	112;"	l	line:112
+PWM	D:\Manish Sharma\projects\PID\main.c	20;"	v	line:20
+P_term	D:\Manish Sharma\projects\PID\main.c	62;"	l	line:62
+Pr_error	D:\Manish Sharma\projects\PID\main.c	17;"	v	line:17
+_T1Interrupt	D:\Manish Sharma\projects\PID\main.c	104;"	f	line:104	signature:(void)
+adc_sample	D:\Manish Sharma\projects\PID\ADC.c	44;"	f	line:44	signature:(unsigned char channel)
+adc_sample	D:\Manish Sharma\projects\PID\main.c	31;"	p	line:31	file:	signature:(unsigned char)
+adc_value_present	D:\Manish Sharma\projects\PID\main.c	16;"	v	line:16
+adc_value_setpoint	D:\Manish Sharma\projects\PID\main.c	15;"	v	line:15
+configure_ADC	D:\Manish Sharma\projects\PID\ADC.c	4;"	f	line:4	signature:(void)
+configure_ADC	D:\Manish Sharma\projects\PID\main.c	23;"	p	line:23	file:	signature:(void)
+configure_BOARD	D:\Manish Sharma\projects\PID\main.c	138;"	f	line:138
+configure_PPS	D:\Manish Sharma\projects\PID\UART.c	49;"	f	line:49	signature:(void)
+configure_PPS	D:\Manish Sharma\projects\PID\main.c	26;"	p	line:26	file:	signature:(void)
+configure_TIMER_T1	D:\Manish Sharma\projects\PID\main.c	27;"	p	line:27	file:	signature:(void)
+configure_TIMER_T1	D:\Manish Sharma\projects\PID\timer.c	3;"	f	line:3	signature:(void)
+configure_clock	D:\Manish Sharma\projects\PID\clock.c	9;"	f	line:9	signature:(void)
+configure_clock	D:\Manish Sharma\projects\PID\main.c	24;"	p	line:24	file:	signature:(void)
+configure_uart	D:\Manish Sharma\projects\PID\UART.c	10;"	f	line:10	signature:(void)
+configure_uart	D:\Manish Sharma\projects\PID\main.c	25;"	p	line:25	file:	signature:(void)
+delay_ms	D:\Manish Sharma\projects\PID\main.c	124;"	f	line:124	signature:(int time)
+delay_ms	D:\Manish Sharma\projects\PID\main.c	33;"	p	line:33	file:	signature:(int)
+delta_PWM	D:\Manish Sharma\projects\PID\main.c	60;"	l	line:60
+disableInterrupts	D:\Manish Sharma\projects\PID\main.c	49;"	f	line:49	signature:(void)
+enableInterrupts	D:\Manish Sharma\projects\PID\main.c	38;"	f	line:38	signature:(void)
+error	D:\Manish Sharma\projects\PID\main.c	61;"	l	line:61
+flag	D:\Manish Sharma\projects\PID\main.c	19;"	v	line:19
+i	D:\Manish Sharma\projects\PID\UART.c	8;"	v	line:8
+i	D:\Manish Sharma\projects\PID\main.c	126;"	l	line:126
+j	D:\Manish Sharma\projects\PID\main.c	126;"	l	line:126
+k	D:\Manish Sharma\projects\PID\main.c	126;"	l	line:126
+main	D:\Manish Sharma\projects\PID\main.c	169;"	f	line:169
+motor_control	D:\Manish Sharma\projects\PID\main.c	80;"	f	line:80	signature:(int a )

@@ -1,0 +1,61 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+!_TAG_REVISION_NAME	MCHPTags	//
+!_TAG_REVISION_VERSION	6.0.1	//
+BAUDRATE1	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\main.c	96;"	l	line:96
+BAUDRATE1::38400	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\UART.c	4;"	d	line:4	file:
+BAUDRATE2	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\main.c	96;"	l	line:96
+BAUDRATE2::38400	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\UART.c	5;"	d	line:5	file:
+BRGVAL1::((FCY/BAUDRATE1)/16)-1	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\UART.c	7;"	d	line:7	file:
+BRGVAL2::((FCY/BAUDRATE2)/16)-1	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\UART.c	8;"	d	line:8	file:
+CS::LATCbits.LATC5	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\ADXL.h	14;"	d	line:14
+DATAX0::0x32	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\ADXL.h	3;"	d	line:3
+DATAX1::0x33	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\ADXL.h	4;"	d	line:4
+DATAY0::0x34	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\ADXL.h	5;"	d	line:5
+DATAY1::0x35	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\ADXL.h	6;"	d	line:6
+DATAZ0::0x36	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\ADXL.h	7;"	d	line:7
+DATAZ1::0x37	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\ADXL.h	8;"	d	line:8
+DATA_FORMAT::0x31	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\ADXL.h	2;"	d	line:2
+DMA_0::0	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\main.c	8;"	d	line:8	file:
+FCY::40000000	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\UART.c	3;"	d	line:3	file:
+FNOSC_FRC	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\clock.c	4;"	v	line:4
+FWDTEN_OFF	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\main.c	10;"	v	line:10
+HIGH::1	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\ADXL.h	12;"	d	line:12
+LED_1::LATAbits.LATA2	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\ADXL.h	16;"	d	line:16
+LED_1::LATAbits.LATA2	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\main.c	12;"	d	line:12	file:
+LED_3::LATAbits.LATA4	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\ADXL.h	17;"	d	line:17
+LED_3::LATAbits.LATA4	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\main.c	13;"	d	line:13	file:
+LOW::0	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\ADXL.h	11;"	d	line:11
+OSCIOFNC_OFF	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\clock.c	6;"	v	line:6
+POWER_CTL::0x2D	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\ADXL.h	1;"	d	line:1
+PR1	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\main.c	96;"	l	line:96
+SPI::1	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\main.c	5;"	d	line:5	file:
+TIMER_1::1	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\main.c	4;"	d	line:4	file:
+TIMER_FREQ::100	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\TIMER.c	3;"	d	line:3	file:
+UART_1::1	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\main.c	6;"	d	line:6	file:
+UART_2::0	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\main.c	7;"	d	line:7	file:
+_T1Interrupt	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\main.c	45;"	f	line:45	signature:(void)
+a	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\SPI.c	54;"	l	line:54
+configure_BOARD	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\main.c	77;"	f	line:77
+configure_PPS	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\main.c	20;"	p	line:20	file:	signature:(void)
+configure_PPS	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\pps.c	4;"	f	line:4	signature:(void)
+configure_SPI	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\SPI.c	5;"	f	line:5
+configure_TIMER_T1	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\TIMER.c	6;"	f	line:6	signature:(unsigned int priority)
+configure_TIMER_T1	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\main.c	22;"	p	line:22	file:	signature:(unsigned int interrupt_priority)
+configure_UART1	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\UART.c	12;"	f	line:12	signature:(unsigned char priority)
+configure_UART2	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\UART.c	34;"	f	line:34	signature:(unsigned char priority)
+configure_clock	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\clock.c	9;"	f	line:9	signature:(void)
+configure_clock	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\main.c	19;"	p	line:19	file:	signature:(void)
+data_accel	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\main.c	16;"	v	line:16
+delay_ms	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\main.c	63;"	f	line:63	signature:(int time)
+disableInterrupts	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\main.c	36;"	f	line:36	signature:(void)
+enableInterrupts	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\main.c	25;"	f	line:25	signature:(void)
+i	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\main.c	65;"	l	line:65
+j	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\main.c	65;"	l	line:65
+k	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\main.c	65;"	l	line:65
+main	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\main.c	133;"	f	line:133
+writeRegister	D:\laptop\New folder\adxl_main_final\adxl345\spi_working\adxl345\SPI.c	43;"	f	line:43	signature:(char registerAddress, char value)

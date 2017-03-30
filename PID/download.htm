@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Python to interface with the Pololu 8-channel servo controller &laquo;  dmt195 today</title>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="stylesheet" href="http://s2.wp.com/wp-content/themes/pub/contempt/style.css?m=1318289111g" type="text/css" media="screen" />
+<link rel="pingback" href="http://dmt195.wordpress.com/xmlrpc.php" />
+<style type="text/css">
+#flickr_badge_source_txt {padding:0; font: 11px Arial, Helvetica, Sans serif; color:#666666;}
+#flickr_badge_icon {display:block !important; margin:0 !important; border: 1px solid rgb(0, 0, 0) !important;}
+#flickr_icon_td {padding:0 5px 0 0 !important;}
+.flickr_badge_image {text-align:center !important;}
+.flickr_badge_image img {border: 1px solid black !important;}
+#flickr_badge_uber_wrapper {width:150px;}
+#flickr_www {display:block; text-align:center; padding:0 10px 0 10px !important; font: 11px Arial, Helvetica, Sans serif !important; color:#3993ff !important;}
+#flickr_badge_uber_wrapper a:hover,
+#flickr_badge_uber_wrapper a:link,
+#flickr_badge_uber_wrapper a:active,
+#flickr_badge_uber_wrapper a:visited {text-decoration:none !important; background:inherit !important;color:#3993ff;}
+#flickr_badge_wrapper {background-color:#ffffff;border: solid 1px #000000}
+#flickr_badge_source {padding:0 !important; font: 11px Arial, Helvetica, Sans serif !important; color:#666666 !important;}
+</style>
+<link rel="alternate" type="application/rss+xml" title="dmt195 today &raquo; Feed" href="http://dmt195.wordpress.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="dmt195 today &raquo; Comments Feed" href="http://dmt195.wordpress.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="dmt195 today &raquo; Python to interface with the Pololu 8-channel servo&nbsp;controller Comments Feed" href="http://dmt195.wordpress.com/2009/01/19/python-to-interface-with-the-pololu-8-channel-servo-controller/feed/" />
+<script type="text/javascript">
+/* <![CDATA[ */
+function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}
+/* ]]> */
+</script>
+<link rel="stylesheet" href="http://s0.wp.com/wp-content/themes/h4/global.css?m=1317703923g" type="text/css" />
+<link rel='stylesheet' id='loggedout-subscribe-css'  href='http://s2.wp.com/wp-content/blog-plugins/loggedout-follow/widget.css?m=1318259506g&#038;ver=20110926' type='text/css' media='all' />
+<link rel='stylesheet' id='post-reactions-css'  href='http://s2.wp.com/wp-content/mu-plugins/post-flair/style.css?m=1318977325g&#038;ver=3' type='text/css' media='all' />
+<script type='text/javascript' src='http://s0.wp.com/wp-includes/js/jquery/jquery.js?m=1317703917g&amp;ver=1.6.1'></script>
+<script type='text/javascript' src='http://s2.wp.com/wp-content/blog-plugins/loggedout-follow/widget.js?m=1320005311g&amp;ver=20111030a'></script>
+<script type='text/javascript' src='http://s1.wp.com/wp-includes/js/comment-reply.js?m=1317703917g&amp;ver=20090102'></script>
+<link rel='stylesheet' id='highlander-comments-css'  href='http://s0.wp.com/wp-content/mu-plugins/highlander-comments/style.css?m=1318028237g&#038;ver=20110620' type='text/css' media='all' />
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='http://s0.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1317703920g&#038;ver=20110606' type='text/css' media='all' />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://dmt195.wordpress.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://dmt195.wordpress.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Controlling servos using Ubuntu (linux server) and&nbsp;Python' href='http://dmt195.wordpress.com/2009/01/17/controlling-servos-using-ubuntu-linux-server-and-python/' />
+<link rel='next' title='Running the Python script over&nbsp;PHP5' href='http://dmt195.wordpress.com/2009/01/19/running-the-python-script-over-php5/' />
+<meta name="generator" content="WordPress.com" />
+<link rel='canonical' href='http://dmt195.wordpress.com/2009/01/19/python-to-interface-with-the-pololu-8-channel-servo-controller/' />
+<link rel='shortlink' href='http://wp.me/p1bVj-20' />
+<link rel="alternate" type="application/json+oembed" href="http://public-api.wordpress.com/oembed/1.0/?format=json&url=http%3A%2F%2Fdmt195.wordpress.com%2F2009%2F01%2F19%2Fpython-to-interface-with-the-pololu-8-channel-servo-controller%2F&for=wpcom-auto-discovery" /><link rel="alternate" type="application/xml+oembed" href="http://public-api.wordpress.com/oembed/1.0/?format=xml&url=http%3A%2F%2Fdmt195.wordpress.com%2F2009%2F01%2F19%2Fpython-to-interface-with-the-pololu-8-channel-servo-controller%2F&for=wpcom-auto-discovery" /><meta property="og:type" content="article" />
+<meta property="og:title" content="Python to interface with the Pololu 8-channel servo&nbsp;controller" />
+<meta property="og:url" content="http://dmt195.wordpress.com/2009/01/19/python-to-interface-with-the-pololu-8-channel-servo-controller/" />
+<meta property="og:description" content="I now have a Python script which is general enough to move any of the 8 servos to any angle. At the bash shell I can type:
+python controlsscii.py pos 0 90
+and the &#039;position&#039; routine will run - mo..." />
+<meta property="og:site_name" content="dmt195 today" />
+<link rel="shortcut icon" type="image/x-icon" href="http://s2.wp.com/i/favicon.ico?m=1317703916g" sizes="16x16 24x24 32x32 48x48" />
+<link rel="icon" type="image/x-icon" href="http://s2.wp.com/i/favicon.ico?m=1317703916g" sizes="16x16 24x24 32x32 48x48" />
+<link rel="apple-touch-icon-precomposed" href="http://s0.wp.com/i/webclip.png?m=1317703916g" />
+<link rel='openid.server' href='http://dmt195.wordpress.com/?openidserver=1' />
+<link rel='openid.delegate' href='http://dmt195.wordpress.com/' />
+<link rel="search" type="application/opensearchdescription+xml" href="http://dmt195.wordpress.com/osd.xml" title="dmt195 today" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wordpress.com/opensearch.xml" title="WordPress.com" />
+	<style type="text/css">
+	/* <![CDATA[ */
+			/* ]]> */
+	</style>
+	<style type="text/css">
+#headerimg{
+	background: url(http://dmt195.files.wordpress.com/2009/02/10022009119.png) no-repeat;
+}
+#header h1 a, .description {
+	color:#bcfacf;
+}
+</style>
+<meta name="application-name" content="dmt195 today" /><meta name="msapplication-window" content="width=device-width;height=device-height" /><meta name="msapplication-tooltip" content="Sloppy&#039;s robotics project blog" /><meta name="msapplication-task" content="name=Subscribe;action-uri=http://dmt195.wordpress.com/feed/;icon-uri=http://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=http://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico" />
+<script type="text/javascript" src="http://rt.liftdna.com/liftrtb2_1.js"></script>
+<script type="text/javascript" src="http://rt.liftdna.com/WP.js"></script>
+<script type="text/javascript"> 
+	window.google_analytics_uacct = "UA-52447-2"; 
+</script>
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-52447-2']);
+	_gaq.push(['_setDomainName', 'wordpress.com']);
+	_gaq.push(['_initData']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})();
+</script>
+</head>
+<body class="typekit-enabled highlander-enabled highlander-light">
+
+<div id="page">
+
+<div id="header">
+	<div id="headerimg" onclick="location.href='http://dmt195.wordpress.com';" style="cursor: pointer;">
+		<h1><a href="http://dmt195.wordpress.com/">dmt195 today</a></h1>
+		<div class="description">Sloppy&#8217;s robotics project blog</div>
+	</div>
+</div>
+
+<ul id="pagebar" class="menu" style="background: url(http://s2.wp.com/wp-content/themes/pub/contempt/images/blue_flower/pagebar.jpg);">
+	<li class="page_item"><a href="http://dmt195.wordpress.com/">Home</a></li>
+	<li class="page_item page-item-181"><a href="http://dmt195.wordpress.com/handy-links/" title="Handy&nbsp;Links">Handy&nbsp;Links</a></li>
+<li class="page_item page-item-144"><a href="http://dmt195.wordpress.com/robotic-arm-project-page/" title="Robotic Arm Project&nbsp;Page">Robotic Arm Project&nbsp;Page</a></li>
+</ul>
+
+<div id="grad" style="height: 65px; width: 100%; background: url(http://s2.wp.com/wp-content/themes/pub/contempt/images/blue_flower/topgrad.jpg);">&nbsp;</div>
+
+	<div id="content" class="widecolumn">
+
+  
+
+
+		<div class="post-124 post type-post status-publish format-standard hentry category-uncategorized tag-arm tag-linux tag-programming tag-python tag-servos" id="post-124">
+			<h2><a href="http://dmt195.wordpress.com/2009/01/19/python-to-interface-with-the-pololu-8-channel-servo-controller/" rel="bookmark" title="Permanent Link: Python to interface with the Pololu 8-channel servo&nbsp;controller">Python to interface with the Pololu 8-channel servo&nbsp;controller</a></h2>
+
+			<div class="entry">
+				<p>I now have a Python script which is general enough to move any of the 8 servos to any angle. At the bash shell I can type:</p>
+<pre>python controlsscii.py pos 0 90</pre>
+<p>and the &#8216;position&#8217; routine will run &#8211; moving servo 0 to 90 degrees using the &#8216;Mini SSC II&#8217; protocol. Along side this I produced a &#8216;Pololu&#8217; protocol version running a &#8216;speed&#8217; and &#8216;position&#8217; routine which can be updated with further routines. I concentrated on the former for ease of debugging when things got frustrating!</p>
+<p>The code is as follows:</p>
+<pre>import serial
+import sys
+#set up the serial port for action (0==COM1==ttyS0)
+ser=serial.Serial(0)
+ser.baudrate=2400
+
+def setpos(n,angle):
+  #Quick check that things are in range
+  if angle &gt; 180 or angle &lt;0:
+    angle=90
+    print "WARNING: Angle range should be between 0 and 180. Setting angle to 90 degrees to be safe..."
+    print "moving servo "+str(n)+" to "+str(angle)+" degrees."
+
+  byteone=int(254*angle/180)
+  #move to an absolute position in 8-bit mode (0x04 for the mode, 0 for the servo, 0-255 for the position (spread over two bytes))
+  bud=chr(0xFF)+chr(n)+chr(byteone)
+  ser.write(bud)
+
+mode=sys.argv[1]
+n=int(sys.argv[2])
+m=int(sys.argv[3])
+
+if mode=='pos':
+  setpos(n,m)
+else:
+  print "No commands given.\nUsage: controlsscii.py pos &lt;servo&gt; &lt;angle&gt;"</pre>
+<p>Simple when you know how! And here&#8217;s the &#8216;Pololu&#8217; protocol version (so far):</p>
+<pre>import serial
+import sys
+#set up the serial port for action
+ser=serial.Serial(0)
+ser.baudrate=2400
+def setspeed(n,speed):
+  #Quick check that things are in range
+  if speed &gt; 127 or speed &lt;0:
+    speed=1
+    print "WARNING: Speed should be between 0 and 127. Setting speed to 1..."
+    print "Setting servo "+str(n)+" speed to "+str(speed)+" out of 127."
+  speed=int(speed)
+  #set speed (needs 0x80 as first byte, 0x01 as the second, 0x01 is for speed, 0 for servo 0, and 127 for max speed)
+  bud=chr(0x80)+chr(0x01)+chr(0x01)+chr(n)+chr(speed)
+  ser.write(bud)
+
+def setpos(n,angle):
+  #Check that things are in range
+  if angle &gt; 180 or angle &lt;0:
+    angle=90
+    print "WARNING: Angle range should be between 0 and 180. Setting angle to 90 degrees to be safe..."
+    print "moving servo "+str(n)+" to "+str(angle)+" degrees."
+
+  #Valid range is 500-5500
+  offyougo=int(5000*angle/180)+500
+  #Get the lowest 7 bits
+  byteone=offyougo&amp;127
+  #Get the highest 7 bits
+  bytetwo=(offyougo-(offyougo&amp;127))/128
+  #move to an absolute position in 8-bit mode (0x04 for the mode, 0 for the servo, 0-255 for the position (spread over two bytes))
+  bud=chr(0x80)+chr(0x01)+chr(0x04)+chr(n)+chr(bytetwo)+chr(byteone)
+  ser.write(bud)
+
+mode=sys.argv[1]
+n=int(sys.argv[2])
+m=int(sys.argv[3])
+if mode=='speed':
+  setspeed(n,m)
+elif mode=='pos':
+  setpos(n,m)
+else:
+  print "No commands given.\nUsage: controlfunction.py speed &lt;servo&gt; &lt;speed&gt;, or\n controlfunction.py pos &lt;servo&gt; &lt;angle&gt;"</pre>
+<p>Hope this has helped someone. Don&#8217;t forget to set the jumpers to set the protocol.</p>
+<p>Updated: Code had all the indentation removed on upload (really not a good thing for Python!). It&#8217;s still not great as it runs off the right hand side but I&#8217;ll work out showing code at some point!</p>
+
+<div id="wpcom_below_post"  class="wpadvert" style="text-align: center; padding: 5px; background: #; padding: 5px; margin: 10px auto; width: 310px;">
+<!-- <span style="text-align: left; letter-spacing: 1px; font: 8px/1em Verdana, sans-serif; color: #ccc; text-transform: uppercase; display: block; padding: 0 1px;">Advertisement</span> -->
+<script type="text/javascript">
+LD_AddCustomAttr("AdOpt", "1");
+LD_AddCustomAttr("Origin", "other");
+LD_AddCustomAttr("theme_bg", "ffffff"); 
+LD_AddCustomAttr("theme_text", "333333"); 
+LD_AddCustomAttr("theme_link", "0066cc"); 
+LD_AddCustomAttr("theme_border", "5581C0"); 
+LD_AddCustomAttr("theme_url", "114477"); 
+LD_AddCustomAttr("LangId", "1");
+LD_AddCustomAttr("Autotag", "technology");
+LD_AddCustomAttr("Tag", "arm");
+LD_AddCustomAttr("Tag", "linux");
+LD_AddCustomAttr("Tag", "programming");
+LD_AddCustomAttr("Tag", "python");
+LD_AddCustomAttr("Tag", "servos");
+
+LD_AddSlot("wpcom_below_post");
+LD_GetBids();
+</script>
+</div><div class="sharedaddy sd-like-enabled"><div id="wpl-likebox" class="sd-block sd-like"><h3 class="sd-title">Like this:</h3><div class="sd-content"><div id="wpl-button"><a href='http://dmt195.wordpress.com/2009/01/19/python-to-interface-with-the-pololu-8-channel-servo-controller/?like=1&amp;_wpnonce=3849298bf1' title='I like this post' class='like needs-login sd-button' rel='nofollow'><span>Like</span></a></div><div id="wpl-count" class="sd-like-count">Be the first to like this post.</div></div></div></div>
+				
+				<p class="postmetadata alt">
+					<small>
+					This entry was posted  on Monday, January 19th, 2009 at 10:54 pm and is filed under <a href="http://dmt195.wordpress.com/category/uncategorized/" title="View all posts in Uncategorized" rel="category tag">Uncategorized</a>.					You can follow any responses to this entry through the <a href='http://dmt195.wordpress.com/2009/01/19/python-to-interface-with-the-pololu-8-channel-servo-controller/feed/'>RSS 2.0</a> feed.
+											You can <a href="#respond">leave a response</a>, or <a href="http://dmt195.wordpress.com/2009/01/19/python-to-interface-with-the-pololu-8-channel-servo-controller/trackback/" rel="trackback">trackback</a> from your own site.
+					
+					</small>
+				</p>
+
+				<nav id="nav-below">
+					<h3 class="assistive-text">Post navigation</h3>
+					<span class="nav-previous"><a href="http://dmt195.wordpress.com/2009/01/17/controlling-servos-using-ubuntu-linux-server-and-python/" rel="prev">&laquo; Previous Post</a></span>
+					<span class="nav-next"><a href="http://dmt195.wordpress.com/2009/01/19/running-the-python-script-over-php5/" rel="next">Next Post &raquo;</a></span>
+				</nav><!-- #nav-below -->
+
+			</div>
+		</div>
+
+	<div id="comments">
+
+
+<h3 id="comments-title">5 Responses to <em>Python to interface with the Pololu 8-channel servo&nbsp;controller</em></h3>
+
+
+<ol class="commentlist">
+			<li class="pingback even thread-even depth-1 highlander-comment" id="comment-12">
+				<div id="div-comment-12" class="comment-body">
+				<div class="comment-author vcard">
+				<cite class="fn"><a href='http://dmt195.wordpress.com/2009/01/23/quick-screenshots-of-the-php-to-servo-file-running/' rel='external nofollow' class='url'>Quick screenshots of the PHP-to-Servo file running &laquo; dmt195 today</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://dmt195.wordpress.com/2009/01/19/python-to-interface-with-the-pololu-8-channel-servo-controller/#comment-12">
+			23 January, 2009 at 12:28 am</a>		</div>
+
+		<p>[...] entering some data the output of the Python script is added to the top of the [...]</p>
+
+		<div class="reply">
+		<a class='comment-reply-link' href='/2009/01/19/python-to-interface-with-the-pololu-8-channel-servo-controller/?replytocom=12#respond' onclick='return addComment.moveForm("div-comment-12", "12", "respond", "124")'>Reply</a>		</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent highlander-comment" id="comment-22">
+				<div id="div-comment-22" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/5cfc5e3600412374fe24a18a377e14d9?s=32&amp;d=identicon&amp;r=G' class='avatar avatar-32' height='32' width='32' />		<cite class="fn">some guy</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://dmt195.wordpress.com/2009/01/19/python-to-interface-with-the-pololu-8-channel-servo-controller/#comment-22">
+			22 February, 2009 at 2:51 pm</a>		</div>
+
+		<p>google pololu wxwidgets :)</p>
+
+		<div class="reply">
+		<a class='comment-reply-link' href='/2009/01/19/python-to-interface-with-the-pololu-8-channel-servo-controller/?replytocom=22#respond' onclick='return addComment.moveForm("div-comment-22", "22", "respond", "124")'>Reply</a>		</div>
+				</div>
+		<ul class='children'>
+		<li class="comment byuser comment-author-dmt195 bypostauthor even depth-2 highlander-comment" id="comment-23">
+				<div id="div-comment-23" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/17d7ba1b118eb94f4a7cdec668b33245?s=32&amp;d=identicon&amp;r=G' class='avatar avatar-32' height='32' width='32' />		<cite class="fn"><a href='http://dmt195.wordpress.com/' rel='external nofollow' class='url'>dmt195</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://dmt195.wordpress.com/2009/01/19/python-to-interface-with-the-pololu-8-channel-servo-controller/#comment-23">
+			22 February, 2009 at 8:07 pm</a>		</div>
+
+		<p>Thanks for the comment &#8211; that may be fine for some but my linux setup is not running a GUI. The <a href="http://www.tinyurl.com/d2zenm" rel="nofollow">servomonster.py</a> script it refers to may be of interest though.</p>
+
+		<div class="reply">
+		<a class='comment-reply-link' href='/2009/01/19/python-to-interface-with-the-pololu-8-channel-servo-controller/?replytocom=23#respond' onclick='return addComment.moveForm("div-comment-23", "23", "respond", "124")'>Reply</a>		</div>
+				</div>
+		</li>
+</ul>
+</li>
+		<li class="pingback odd alt thread-even depth-1 highlander-comment" id="comment-44">
+				<div id="div-comment-44" class="comment-body">
+				<div class="comment-author vcard">
+				<cite class="fn"><a href='http://carlitoscontraptions.com/2009/07/pololu-python-library/' rel='external nofollow' class='url'>Pololu Python Library | Carlitos' Contraptions</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://dmt195.wordpress.com/2009/01/19/python-to-interface-with-the-pololu-8-channel-servo-controller/#comment-44">
+			16 July, 2009 at 4:54 am</a>		</div>
+
+		<p>[...] know there is already a python interface for it but I really wanted to have an object oriented way of managing motors (i.e. they can be [...]</p>
+
+		<div class="reply">
+		<a class='comment-reply-link' href='/2009/01/19/python-to-interface-with-the-pololu-8-channel-servo-controller/?replytocom=44#respond' onclick='return addComment.moveForm("div-comment-44", "44", "respond", "124")'>Reply</a>		</div>
+				</div>
+		</li>
+		<li class="pingback even thread-odd thread-alt depth-1 highlander-comment" id="comment-61">
+				<div id="div-comment-61" class="comment-body">
+				<div class="comment-author vcard">
+				<cite class="fn"><a href='http://www.half-byte.com/2009/09/20/servo-controller-driven-over-a-usb-serial-adapter/' rel='external nofollow' class='url'>Half-Byte.com &raquo; Servo Controller Driven over a USB-Serial Adapter</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://dmt195.wordpress.com/2009/01/19/python-to-interface-with-the-pololu-8-channel-servo-controller/#comment-61">
+			21 September, 2009 at 7:26 am</a>		</div>
+
+		<p>[...] In the end I was able to whip together a simple python demo script (see below) that moves the servo to various positions.  Feel free to use it, I got inspiration from a previous test script. [...]</p>
+
+		<div class="reply">
+		<a class='comment-reply-link' href='/2009/01/19/python-to-interface-with-the-pololu-8-channel-servo-controller/?replytocom=61#respond' onclick='return addComment.moveForm("div-comment-61", "61", "respond", "124")'>Reply</a>		</div>
+				</div>
+		</li>
+</ol>
+
+
+
+								<div id="respond">
+				<h3 id="reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2009/01/19/python-to-interface-with-the-pololu-8-channel-servo-controller/#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="http://dmt195.wordpress.com/wp-comments-post.php" method="post" id="commentform">
+																										
+
+
+												
+<input type="hidden" name="hc_post_as" id="hc_post_as" value="guest" />
+
+<div class="comment-form-field comment-textarea">
+	<label for="comment">Enter your comment here...</label>
+	<div id="comment-form-comment"><textarea id="comment" name="comment"></textarea></div>
+</div>
+
+<div id="comment-form-identity">
+
+	<div id="comment-form-nascar">
+				<ul>
+			<li class="selected">
+				<a href="#comment-form-guest" id="postas-guest" class="social_buttons sb_24 sb_guest">
+					<span>Guest</span>
+				</a>
+			</li>
+			<li>
+				<a href="#comment-form-wordpress" id="postas-wordpress" class="social_buttons sb_24 sb_wordpress">
+					<span>Log In</span>
+				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:Twitter" id="postas-twitter" class="social_buttons sb_24 sb_twitter">
+					<span>Log In</span>
+				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:Facebook" id="postas-facebook" class="social_buttons sb_24 sb_facebook">
+					<span>Log In</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+	<div id="comment-form-guest" class="comment-form-service selected">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="http://www.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25&d=mm" alt="Gravatar" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+				<div class="comment-form-field comment-form-email">
+					<label for="email">Email <span class="required">(required)</span> <span class="nopublish">(Not published)</span></label>
+					<div class="comment-form-input"><input id="email" name="email" type="text" value="" /></div>
+				</div>
+				<div class="comment-form-field comment-form-author">
+					<label for="author">Name <span class="required">(required)</span></label>
+					<div class="comment-form-input"><input id="author" name="author" type="text" value="" /></div>
+				</div>
+				<div class="comment-form-field comment-form-url">
+					<label for="url">Website</label>
+					<div class="comment-form-input"><input id="url" name="url" type="text" value="" /></div>
+				</div> 
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-wordpress" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="http://s2.wp.com/wp-content/mu-plugins/highlander-comments/images/wplogo.png?m=1317703920g" alt="WordPress.com Logo" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+					<p id="wordpress-login-first">Please log in to WordPress.com to post a comment to your blog.</p>
+				<iframe id="wordpress-login-iframe" data-srcurl="http://dmt195.wordpress.com/wp-login.php?redirect_to=http%3A%2F%2Fdmt195.wordpress.com%2Fhighlander.login%2F&#038;action=highlander-login&#038;skin=light"></iframe>
+				</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-twitter" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="http://www.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25&d=mm" alt="Twitter picture" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="twitter_avatar" id="twitter-avatar" class="comment-meta-twitter" value="" />
+				<input type="hidden" name="twitter_user_id" id="twitter-user_id" class="comment-meta-twitter" value="" />
+				<input type="hidden" name="twitter_access_token" id="twitter-access_token" class="comment-meta-twitter" value="" />
+				<p class="comment-form-posting-as pa-twitter"><strong></strong> You are commenting using your Twitter account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'twitter' );">Log&nbsp;Out</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-facebook" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="http://www.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25&d=mm" alt="Facebook photo" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="fb_avatar" id="facebook-avatar" class="comment-meta-facebook" value="" />
+				<input type="hidden" name="fb_user_id" id="facebook-user_id" class="comment-meta-facebook" value="" />
+				<input type="hidden" name="fb_access_token" id="facebook-access_token" class="comment-meta-facebook" value="" />
+				<p class="comment-form-posting-as pa-facebook"><strong></strong> You are commenting using your Facebook account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'facebook' );">Log&nbsp;Out</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+
+	<div id="comment-form-load-service" class="comment-form-service"> 
+		<div class="comment-form-posting-as-cancel"><a href="javascript:HighlanderComments.cancelExternalWindow();">Cancel</a></div>
+		<p>Connecting to %s</p> 
+	</div>
+	
+	
+</div>
+
+
+<div id="comment-form-subscribe"> 
+<p class="comment-subscription-form"><input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;" tabindex="6"/> <label class="subscribe-label" id="subscribe-label" for="subscribe">Notify me of follow-up comments via email.</label></p><p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto;" tabindex="7"/> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts via email.</label></p></div>
+
+												<p class="form-submit">
+							<input name="submit" type="submit" id="comment-submit" value="Post Comment" />
+							<input type='hidden' name='comment_post_ID' value='124' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+						</p>
+						
+<input type="hidden" name="genseq" value="1320128767" />
+<script type="text/javascript" id="hiab-script-1">
+jQuery( function( $ ) {
+	$( '#hiab-script-1' ).parents( 'form' ).append( '<input type="hidden" name="hiab" value="1" />' );
+} );
+</script>
+<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="d538666f44" /></p><script type='text/javascript' src='http://s2.wp.com/wp-content/mu-plugins/akismet-2.5/form.js?m=1317703921g&amp;ver=1'></script>
+<p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="25"/></p>					</form>
+							</div><!-- #respond -->
+			<div style="clear: both"></div>			
+</div><!-- #comments -->
+	
+	</div>
+
+
+
+	<div id="sidebar">
+		<ul>
+
+		<li id="search-2" class="widget widget_search"><form method="get" id="searchform" action="http://dmt195.wordpress.com/">
+<div><label for="s" class="search-label">Search</label><input type="text" value="" name="s" id="s" />
+<input type="submit" id="searchsubmit" value="Search" />
+</div>
+</form></li>
+<li id="text-333406531" class="widget widget_text"><h2 class="widgettitle">About</h2>
+			<div class="textwidget">This is the personal project page of David Taylor. Please subscribe and follow me making a robot arm and whatever's next. Feel free to copy any/all of my work and source code. I make it available under the Creative Commons license.<br />
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/uk/"><img alt="Creative Commons License" style="border-width:0;" src="http://i.creativecommons.org/l/by-nc-sa/2.0/uk/88x31.png" /></a></div>
+		</li>
+		<li id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widgettitle">Recent Posts</h2>
+		<ul>
+				<li><a href="http://dmt195.wordpress.com/2011/09/08/android-apps-gas-it-right/" title="Android&nbsp;Apps!">Android&nbsp;Apps!</a></li>
+				<li><a href="http://dmt195.wordpress.com/2011/08/18/cooperative-swarm-of-robots/" title="Cooperative Swarm of&nbsp;Robots">Cooperative Swarm of&nbsp;Robots</a></li>
+				<li><a href="http://dmt195.wordpress.com/2010/03/30/a-scanning-range-finder-using-arduino-and-processing/" title="A scanning range finder using Arduino and&nbsp;Processing">A scanning range finder using Arduino and&nbsp;Processing</a></li>
+				<li><a href="http://dmt195.wordpress.com/2010/02/02/new-laser-cutting-service/" title="New laser cutting&nbsp;service">New laser cutting&nbsp;service</a></li>
+				<li><a href="http://dmt195.wordpress.com/2009/09/10/laser-cutting-in-the-uk/" title="Laser cutting in the&nbsp;UK">Laser cutting in the&nbsp;UK</a></li>
+				</ul>
+		</li>
+<li id="wp_tag_cloud" class="widget wp_widget_tag_cloud"><h2 class="widgettitle">Tags</h2>
+<div style="overflow:hidden"><a href='http://dmt195.wordpress.com/tag/arduino/' class='tag-link-134289' title='1 topic' style='font-size: 8pt;'>arduino</a>
+<a href='http://dmt195.wordpress.com/tag/arm/' class='tag-link-255243' title='7 topics' style='font-size: 20pt;'>arm</a>
+<a href='http://dmt195.wordpress.com/tag/basicx24/' class='tag-link-15792814' title='2 topics' style='font-size: 11.6pt;'>basicx24</a>
+<a href='http://dmt195.wordpress.com/tag/bipolar/' class='tag-link-47517' title='2 topics' style='font-size: 11.6pt;'>bipolar</a>
+<a href='http://dmt195.wordpress.com/tag/eagle/' class='tag-link-71653' title='1 topic' style='font-size: 8pt;'>eagle</a>
+<a href='http://dmt195.wordpress.com/tag/electronics/' class='tag-link-7334' title='6 topics' style='font-size: 19pt;'>electronics</a>
+<a href='http://dmt195.wordpress.com/tag/linux/' class='tag-link-610' title='3 topics' style='font-size: 14pt;'>linux</a>
+<a href='http://dmt195.wordpress.com/tag/mechanical/' class='tag-link-86067' title='1 topic' style='font-size: 8pt;'>mechanical</a>
+<a href='http://dmt195.wordpress.com/tag/mobile-robot/' class='tag-link-7105813' title='2 topics' style='font-size: 11.6pt;'>mobile robot</a>
+<a href='http://dmt195.wordpress.com/tag/pcb/' class='tag-link-304802' title='1 topic' style='font-size: 8pt;'>pcb</a>
+<a href='http://dmt195.wordpress.com/tag/pic/' class='tag-link-9514' title='1 topic' style='font-size: 8pt;'>pic</a>
+<a href='http://dmt195.wordpress.com/tag/picaxe/' class='tag-link-1113991' title='6 topics' style='font-size: 19pt;'>picaxe</a>
+<a href='http://dmt195.wordpress.com/tag/programming/' class='tag-link-196' title='5 topics' style='font-size: 17.6pt;'>programming</a>
+<a href='http://dmt195.wordpress.com/tag/python/' class='tag-link-832' title='2 topics' style='font-size: 11.6pt;'>python</a>
+<a href='http://dmt195.wordpress.com/tag/robotics/' class='tag-link-13426' title='9 topics' style='font-size: 22pt;'>robotics</a>
+<a href='http://dmt195.wordpress.com/tag/robotics-books/' class='tag-link-2862882' title='1 topic' style='font-size: 8pt;'>robotics books</a>
+<a href='http://dmt195.wordpress.com/tag/servos/' class='tag-link-1296554' title='2 topics' style='font-size: 11.6pt;'>servos</a>
+<a href='http://dmt195.wordpress.com/tag/stepper-motor/' class='tag-link-1738388' title='5 topics' style='font-size: 17.6pt;'>stepper motor</a>
+<a href='http://dmt195.wordpress.com/tag/swarms-robotics/' class='tag-link-62863106' title='1 topic' style='font-size: 8pt;'>swarms robotics</a>
+<a href='http://dmt195.wordpress.com/tag/unipolar/' class='tag-link-979583' title='3 topics' style='font-size: 14pt;'>unipolar</a>
+<a href='http://dmt195.wordpress.com/tag/video/' class='tag-link-412' title='2 topics' style='font-size: 11.6pt;'>video</a>
+<a href='http://dmt195.wordpress.com/tag/web/' class='tag-link-151' title='1 topic' style='font-size: 8pt;'>web</a></div></li>
+<li id="linkcat-121246" class="widget widget_links"><h2 class="widgettitle">My Pages</h2>
+
+	<ul class='xoxo blogroll'>
+<li><a href="http://flickr.com/photos/dmt195" title="Some of my photos online">Flickr Photos</a></li>
+<li><a href="http://uk.youtube.com/profile?user=dmt195" rel="me" title="My YouTube profile and videos">My YouTube</a></li>
+
+	</ul>
+</li>
+
+<li id="rss-1" class="widget widget_rss"><h2 class="widgettitle"><a class='rsswidget' href='http://www.google.com/reader/public/atom/user/01490336413437640648/state/com.google/starred' title='Syndicate this content'><img style='background:orange;color:white;border:none;' width='14' height='14' src='http://s.wordpress.com/wp-includes/images/rss.png' alt='RSS' /></a> <a class='rsswidget' href='' title=''>Starred Reads</a></h2>
+<ul><li><a class='rsswidget' href='http://feedproxy.google.com/~r/hackaday/LgoM/~3/YS0d-Q5PKZg/' title='[Phil’s] parents grow their own organic food, but the harsh Ukraine winters make storing it a difficult proposition. Since it can drop to -30°C on occasion, they asked him to find a way to keep their storeroom at around 5-7°C above zero. He decided to construct his own programmable thermostat to keep things in check, and has been documenting the process as h [&hellip;]'>DIY thermostat keeps the harsh winter cold at bay</a></li><li><a class='rsswidget' href='http://feeds.mashable.com/~r/Mashable/~3/v6_e1G747Z4/' title='Okay, so maybe Mac and PC people have their differences — a lot of them. But, the same can’t be said about Android and iPhone users. Or can it? New analysis from mobile data management startup Onavo, shared exclusively with Mashable, sheds some light on the differences between iPhone and Android users, at least when it comes to their mobile social networking [&hellip;]'>iPhone vs. Android: The Social App Activities That Set Users Apart [INFOGRAPHIC]</a></li><li><a class='rsswidget' href='http://feeds.gawker.com/~r/lifehacker/full/~3/rcFALgz-OW0/jeannie-for-android-responds-to-your-voice-can-hold-a-conversation-with-you' title='Android: Jeannie, formerly Pannous Voice Actions for Android (not to be confused with Google Voice Actions) has always been a solid voice control utility for your Android phone, but the developers have taken a page out of Apple&#039;s book and updated the app with a new name and the ability to hold its own in a conversation with you, the ability to set alarm [&hellip;]'>Jeannie for Android Responds to Your Voice, Can Hold a Conversation with You [Android Downloads]</a></li><li><a class='rsswidget' href='http://feedproxy.google.com/~r/hackaday/LgoM/~3/zAUmIFuRyBI/' title='If you have been chomping at the bit to give drag and drop Arduino programming a try, Minibloq is finally in Beta and ready for you to test! We mentioned the application back in April of this year, when [Julián da Silva] was still in the early stages of developing the software. His graphical programming environment is meant to put the power of the Arduino an [&hellip;]'>Minibloq Arduino IDE is in Beta and in need of testers</a></li><li><a class='rsswidget' href='http://www.popsci.com/science/article/2011-10/video-quantum-levitating-hoverboard-lets-students-glide-air-or-magnets' title='You probably saw that super viral quantum locking levitation video that bounced all over the Web last week (though technically it&#039;s been around since summer) in which a team of researchers plays with some liquid nitrogen, a small superconducting disc, and some strange quantum phenomenon that makes the disc hover above a magnet, no strings attached. This [&hellip;]'>Video: Supercooled Quantum Levitating Hoverboard Lets Students Glide on Air</a></li><li><a class='rsswidget' href='http://feeds.mashable.com/~r/Mashable/~3/P_CON1RfeHE/' title='The sci-fi classic Star Wars: A New Hope features a famous scene in which Luke Skywalker practices Jedi Lightsaber skills on a small, flying sphere that can hover and move quickly in any direction. Now, Japan’s Ministry of Defense has developed what may be a precursor to the Jedi training ball, though they call it a “Spherical Flying Machine.” Driven mostly  [&hellip;]'>“World’s First Spherical Flying Machine” Can Land and Fly Almost Anywhere [VIDEO]</a></li></ul></li>
+	<li id="flickr" class="widget widget_flickr">	<h2 class="widgettitle">Flickr Photos</h2>
+<!-- Start of Flickr Badge -->
+<table id="flickr_badge_uber_wrapper" cellpadding="0" cellspacing="10" border="0" class="flickr-size-"><tr><td><table cellpadding="0" cellspacing="10" border="0" id="flickr_badge_wrapper">
+<tr><td align='center'>
+<a href="http://www.flickr.com/photos/dmt195/5562498096/"><img alt="Murphy spots a horse" title="Murphy spots a horse" src="http://farm6.static.flickr.com/5251/5562498096_8146bec2b8_t.jpg" border="0" /></a><br /><br /><a href="http://www.flickr.com/photos/dmt195/">More Photos</a>
+</td></tr>
+</table>
+</td></tr></table>
+<!-- End of Flickr Badge -->
+
+		</li>
+		<li id="delicious" class="widget widget_delicious">			<h2 class="widgettitle"><a href='http://del.icio.us/dmt195'>del.icio.us links</a></h2>
+<div id="delicious-box" style="margin:0;padding:0;border:none;"> </div>
+			<script type="text/javascript" src="http://feeds.delicious.com/v1/json/dmt195?count=3"></script>
+			<script type="text/javascript">
+			function showImage(img){ return (function(){ img.style.display='inline'; }) }
+			var ul = document.createElement('ul');
+			for (var i=0, post; post = Delicious.posts[i]; i++) {
+				var li = document.createElement('li');
+				var a = document.createElement('a');
+				a.setAttribute('href', post.u);
+				a.appendChild(document.createTextNode(post.d));
+				li.appendChild(a);
+				ul.appendChild(li);
+			}
+			ul.setAttribute('id', 'delicious-list');
+			document.getElementById('delicious-box').appendChild(ul);
+			</script>
+		</li>
+		</ul>
+	</div>
+
+
+
+<div id="footer">
+	<p>
+	Theme: <a href="http://theme.wordpress.com/themes/contempt/">Contempt</a> by <a href="http://www.vault9.net" rel="designer">Vault9</a>. <br />
+	<a href="http://wordpress.com/?ref=footer" rel="generator">Blog at WordPress.com</a>.
+	</p>
+</div>
+
+</div>
+
+		<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script><script type='text/javascript' src='http://s.gravatar.com/js/gprofiles.js?z&#038;ver=MU'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://s1.wp.com/wp-content/mu-plugins/gravatar-hovercards/wpgroho.js?m=1318621575g&amp;ver=MU'></script>
+
+<script type="text/javascript">
+var _qevents = _qevents || [];
+(function() {var elem = document.createElement('script');elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";elem.async = true;elem.type = "text/javascript";var scpt = document.getElementsByTagName('script')[0];scpt.parentNode.insertBefore(elem, scpt);  })();
+_qevents.push( { qacct:"p-18-mFEk4J448M", labels:",language.en,type.wpcom,posttag.arm,posttag.linux,posttag.programming,posttag.python,posttag.servos" } );
+</script>
+<noscript><div style="display: none;"><img src="//pixel.quantserve.com/pixel/p-18-mFEk4J448M.gif?labels=%2Clanguage.en%2Ctype.wpcom%2Cposttag.arm%2Cposttag.linux%2Cposttag.programming%2Cposttag.python%2Cposttag.servos" height="1" width="1" alt="" /></div></noscript>
+
+	<script type="text/javascript">
+	/* <![CDATA[ */
+		jQuery(document).ready( function($) {
+			
+			$('#wpl-button > a.like').click( function(e) {
+				e.preventDefault();
+				
+				$('#wpl-mustlogin').remove();
+				
+				$.post( 'http://dmt195.wordpress.com/wp-admin/admin-ajax.php', { 
+					'action': 'wpl_record_stat',
+					'stat_name': 'loggedout_like_click'
+				} );
+
+				var tenMins = new Date();
+				tenMins.setTime( tenMins.getTime() + 600000 );
+				document.cookie = 'wpl_rand=94cb92f0df; expires=' + tenMins.toGMTString() + '; domain=wordpress.com; path=/;';
+				
+				$('#wpl-count').after( '\
+					<div id="wpl-mustlogin"> \
+						<form action="https://dmt195.wordpress.com/wp-login.php" method="post"> \
+							<p>Just one more step to like this post:</p> \
+							<label><span>Username</span> <input type="text" name="log" id="user_login" class="input" value="" size="20" tabindex="80" /></label> \
+							<label><span>Password</span> <input type="password" name="pwd" id="user_pass" class="input" value="" size="20" tabindex="81" /></label> \
+							<input type="submit" name="wp-submit" id="wp-submit" class="button-primary" value="Log In" tabindex="82" /> \
+							<input type="hidden" name="redirect_to" value="http://dmt195.wordpress.com/2009/01/19/python-to-interface-with-the-pololu-8-channel-servo-controller/?like=1" /> \
+							<input type="hidden" name="wpl_rand" value="94cb92f0df" /> \
+							<p>Not a member yet? <a href="http://wordpress.com/signup/?ref=likebox" id="wpl-signup-link">Sign up with WordPress.com</a></p> \
+						</form> \
+					</div> \
+				');
+				
+				$('#wpl-mustlogin').hide().slideDown('fast');
+			} );
+			
+			$('#wpl-mustlogin input.input').live( 'focus', function() {
+				$(this).prev().hide();
+			}).live( 'blur', function() {
+				if ( $(this).val() == '' )
+					$(this).prev().show();
+			});
+			
+			$('#wpl-mustlogin input#wp-submit').live( 'click', function(e) {
+				e.preventDefault();
+				
+				$.post( 'http://dmt195.wordpress.com/wp-admin/admin-ajax.php', { 
+					'action': 'wpl_record_stat',
+					'stat_name': 'loggedout_login_submit'
+				}, function() {
+					$('#wpl-mustlogin form').submit();
+				} );
+			});			
+			
+			$('#wpl-mustlogin a#wpl-signup-link').live( 'click', function(e) {
+				e.preventDefault();
+				
+				var link = $(this).attr('href');
+				
+				$.post( 'http://dmt195.wordpress.com/wp-admin/admin-ajax.php', { 
+					'action': 'wpl_record_stat',
+					'stat_name': 'loggedout_signup_click'
+				}, function() {
+					location.href = link;
+				} );
+			});					
+			
+		});
+	/* ]]> */
+	</script>
+<script>jQuery(document).ready(function($){ Gravatar.profile_cb = function( h, d ) { WPGroHo.syncProfileData( h, d );	}; Gravatar.my_hash = WPGroHo.my_hash; Gravatar.init( 'body', '#wpadminbar' ); });</script>	<div style="display:none">
+	<div class="grofile-hash-map-5cfc5e3600412374fe24a18a377e14d9">
+	</div>
+	<div class="grofile-hash-map-17d7ba1b118eb94f4a7cdec668b33245">
+	</div>
+	</div>
+		<style type="text/css">
+			
+				.reblog-from img                   { margin: 0 10px 0 0; vertical-align: middle; padding: 0; border: 0; }
+				.reblogger-note img.avatar         { float: left; padding: 0; border: 0; }
+				.reblogger-note-content            { margin: 0 0 20px 35px; }
+				.reblog-post                       { border-left: 3px solid #eee; padding-left: 15px; }
+				.reblog-post ul.thumb-list         { display: block; list-style: none; margin: 2px 0; padding: 0; clear: both; }
+				.reblog-post ul.thumb-list li      { display: inline; margin: 0; padding: 0 1px; border: 0; }
+				.reblog-post ul.thumb-list li a    { margin: 0; padding: 0; border: 0; }
+				.reblog-post ul.thumb-list li img  { margin: 0; padding: 0; border: 0; }
+				.reblog-post                       { border-left: 3px solid #eee; padding-left: 15px; }
+					</style><script type='text/javascript'>
+/* <![CDATA[ */
+var HighlanderComments = {"loggingInText":"Logging In&hellip;","submittingText":"Posting Comment&hellip;","postCommentText":"Post Comment","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Log Out","loginText":"Log In","connectURL":"http:\/\/dmt195.wordpress.com\/public.api\/connect\/?action=request","homeURL":"http:\/\/dmt195.wordpress.com\/","postID":124,"gravDefault":"identicon","enterACommentError":"Please enter a comment","enterEmailError":"Email address required","invalidEmailError":"Invalid email address","enterAuthorError":"Name required"};
+
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://s2.wp.com/wp-content/mu-plugins/highlander-comments/script.js?m=1318534209g&amp;ver=20110804'></script>
+	
+	<div id="bit" class="loggedout-follow-normal">
+		<a class="bsub" href="javascript:void(0)"><span id='bsub-text'>Follow</span></a>
+		<div id="bitsubscribe">
+			
+			<h3><label for="loggedout-follow-field">Follow dmt195 today</label></h3>
+		
+					<form action="http://subscribe.wordpress.com" method="post" accept-charset="utf-8" id="loggedout-follow">
+			<p>Get every new post delivered to your Inbox.</p>
+
+					
+			
+			<p><input type="text" name="email" style="width: 95%; padding: 1px 2px" value="Enter email address" onfocus='this.value=(this.value=="Enter email address") ? "" : this.value;' onblur='this.value=(this.value=="") ? "Enter email address" : this.value;'  id="loggedout-follow-field"/></p>
+
+			<input type="hidden" name="action" value="subscribe"/>
+			<input type="hidden" name="blog_id" value="284165"/>
+			<input type="hidden" name="source" value="http://dmt195.wordpress.com/2009/01/19/python-to-interface-with-the-pololu-8-channel-servo-controller/"/>
+			<input type="hidden" name="sub-type" value="loggedout-follow"/>
+
+			<input type="hidden" id="_wpnonce" name="_wpnonce" value="45c15f98ea" /><input type="hidden" name="_wp_http_referer" value="/2009/01/19/python-to-interface-with-the-pololu-8-channel-servo-controller/" />
+			<p id='bsub-subscribe-button'><input type="submit" value="Sign me up!" /></p>
+			</form>
+					<div id='bsub-credit'><a href="http://wordpress.com">Powered by WordPress.com</a></div>
+		</div><!-- #bitsubscribe -->
+	</div><!-- #bit -->
+<script type="text/javascript" src="http://b.scorecardresearch.com/beacon.js"></script><script type="text/javascript">try{COMSCORE.beacon({c1:2,c2:7518284});}catch(e){}</script><noscript><p class="robots-nocontent"><img src="http://b.scorecardresearch.com/p?cj=1c1=2&#038;c2=7518284" alt="" style="display:none" width="1" height="1" /></p></noscript><script src="http://s.stats.wordpress.com/w.js?21" type="text/javascript"></script>
+<script type="text/javascript">
+st_go({'blog':'284165','v':'wpcom','user_id':'0','post':'124','subd':'dmt195'});
+ex_go({'crypt':'UE5XaGUuOTlwaD85flAmcm1mcmZsaDhkV11YdWFnNncxc1tjZG9XVXhRdC5QY2ZQY1U1P1ROMHxGRiZuL1svVTFGbzZzdSwsYTRnNUVUdWxMei9sMCwlXzBjSnpsUE5GbHRpNEpSMlBSVCZlSUdCSWlbQW5EdHllMWQ5X1ssYTVyMUJ3bVpnVmhufmRSSStkanU2cUU2S3FxfFJuVFFlbTM1eT8lNF1JWGJDZWhDMUhjbmR0cXppclkmMz9BMlNVZW1+dm5WJVNdeCtpaDhQMnU9WW9+Vy8rYXkrSXFJPThaWWxvaXE/MT9MU0U/fi9JaSxoZy1tK3xLZnZ8OHJueVlbM0lvcUQzeUV1bklfbjVdJkxrRkhGcVE='});
+addLoadEvent(function(){linktracker_init('284165',124);});
+	</script>
+<noscript><img src="http://stats.wordpress.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /></noscript>
+
+</body>
+</html>
